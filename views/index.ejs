@@ -12,13 +12,22 @@
     <h1>Insert</h1>
     <br>
     <form action="/insertData" method="post">
-        <label for="id">Id:</label>
-        <input type="number" id="id" name="id" required><br><br>
 
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br><br>
 
-        <input type="submit" value="Sisesta andmebaasi">
+        <input type="submit" value="Sisesta andmebaasi"><br>
+    </form>
+    <form action="/viewData" method="get">
+            <h2>List of players</h2>
+            <ul>
+                <% players.forEach(player => { %>
+                    <li>
+                        Name: <% player.name %>, Id: <% player.id %>
+                    </li>
+                <% }); %>
+            </ul>
+        <input type="button" value="Vaata sisestatud andmeid">
     </form>
 </body>
 </html>
