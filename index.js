@@ -18,19 +18,19 @@ connection.connect(err => {
 });
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', { players: [] });
 });
 
 app.post('/insertData', async (req, res) => {
   const { name } = req.body;
 
   await db.insert(players).values({ name: name });
-  res.send("Inserteedsa");
+  res.send("Tehtud");
 });
 
 app.get('/viewData', async (req, res) => {
-  const players = await db.select().from(players);
-  res.render('index', { players: players });
+  const result = await db.select().from(players);
+  res.render('index', { players: result });
 });
 
 app.listen(port, (err) => {
