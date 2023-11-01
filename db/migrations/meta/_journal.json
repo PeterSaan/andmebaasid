@@ -15,6 +15,13 @@
       "when": 1696923738727,
       "tag": "0001_fresh_phantom_reporter",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1698873787691,
+      "tag": "0002_wild_green_goblin",
+      "breakpoints": true
     }
   ]
 }

@@ -5,7 +5,7 @@ export const players = mysqlTable('players', {
   id: bigint('id', { mode: 'number' }).primaryKey().autoincrement(),
   name: varchar('name', { length: 256 }),
 }, (table) => ({
-  nameIndex: uniqueIndex('name_idx').on(table.name),
+  idIndex: uniqueIndex('id_idx').on(table.id),
 }));
  
 export const guardians = mysqlTable('guardians', {
