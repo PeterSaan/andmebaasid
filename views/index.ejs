@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andembaas</title>
     <script>
-        function lookAtMe() {window.location.href='http://localhost:3000/viewData'}
-        function dontLook() {window.location.href='http://localhost:3000'}
+        function lookAtMe() {window.location.href='http://localhost:3000/viewData'};
     </script>
 </head>
 <body>
@@ -19,16 +18,6 @@
 
         <input type="submit" value="Sisesta andmebaasi"><br><br>
     </form>
-    <form action="/viewData" method="get">
-            <h2>List of players</h2>
-            <ul>
-                <% players.forEach(player => { %>
-                    <li>
-                        Name: <% player.name %>, Id: <% player.id %>
-                    </li>
-                <% }); %>
-            </ul>
-    </form>
-    <button onclick="lookAtMe()">Vaata andmeid</button> <button onclick="dontLook()">Sulge andmed</button>
+    <button onclick="lookAtMe();">Vaata andmeid</button> 
 </body>
 </html>

@@ -18,7 +18,7 @@ connection.connect(err => {
 });
 
 app.get('/', (req, res) => {
-  res.render('index', { players: [] });
+    res.render('index');
 });
 
 app.post('/insertData', async (req, res) => {
@@ -30,7 +30,7 @@ app.post('/insertData', async (req, res) => {
 
 app.get('/viewData', async (req, res) => {
   const result = await db.select().from(players);
-  res.render('index', { players: result });
+  res.render('viewData', { players: result });
 });
 
 app.listen(port, (err) => {
