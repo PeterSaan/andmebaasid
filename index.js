@@ -33,6 +33,11 @@ app.get('/viewData', async (req, res) => {
   res.render('viewData', { players: result });
 });
 
+app.get('/changeData', async (req, res) => {
+  const result = await db.select().from(players);
+  res.render('changeData', {players: result});
+});
+
 app.listen(port, (err) => {
   if (err) console.log(err);
   console.log(`Server running on http://localhost:${port}`);

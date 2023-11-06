@@ -6,12 +6,13 @@
     <title>Vaata andmeid</title>
 
     <script>
-        function dontLook() {window.location.href='http://localhost:3000'}
+        function dontLook() {window.location.href='http://localhost:3000'};
+        function edit() {window.location.href='http://localhost:3000/changeData'};
     </script>
 </head>
 <body>
     <form action="/viewData" method="get">
-        <h2>List of players</h2>
+        <h2>Mängijate nimekiri</h2>
         <ul>
             <% players.forEach(el => { %>
                 <li>
@@ -20,6 +21,7 @@
             <% }); %>
         </ul>
     </form>
+    <button onclick="edit();">Muuda andmeid</button> <br><br><br>
     <button onclick="dontLook();">Peida andmed</button>
 </body>
 </html>
