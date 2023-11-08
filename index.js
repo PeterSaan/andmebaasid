@@ -25,7 +25,8 @@ app.post('/insertData', async (req, res) => {
   const { name } = req.body;
 
   await db.insert(players).values({ name: name });
-  res.send("Tehtud");
+  function back() {window.location.href='http://localhost:3000'}
+  res.send(`Tehtud <br><br> <button onclick=window.location.href='http://localhost:3000'>Tagasi</button>`);
 });
 
 app.get('/viewData', async (req, res) => {

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muuda andmeid</title>
+    <script >function back() {window.location.href='http://localhost:3000'}; </script>
 </head>
 <body>
     <form action="/changeData" method="get">
@@ -15,6 +16,7 @@
                 </li>
             <% }); %>
         </ul>
-    </form>
+    </form> <br><br>
+    <button onclick="back();">Tagasi</button>
 </body>
 </html>
