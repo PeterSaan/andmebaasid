@@ -35,6 +35,7 @@ app.get('/viewData', async (req, res) => {
 
 app.get('/changeData', async (req, res) => {
   const result = await db.select().from(players);
+  //const delete = await db.delete(players).where(eq())
   res.render('changeData', {players: result});
 });
 
