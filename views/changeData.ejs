@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muuda andmeid</title>
-    <script >function back() {window.location.href='http://localhost:3000'}; </script>
+    <script >function back() {window.location.href='http://localhost:3000'};</script>
 </head>
 <body>
-    <form action="/changeData" method="get">
-        <h2>Muuda andmeid</h2>
+    <h2>Muuda andmeid</h2>
         <ul>
             <% players.forEach(el => { %>
                 <li>
-                    The name is <%= el.name %> and their id is <%= el.id %>.
+                    The name is <%= el.name %> and their id is <%= el.id %>. <br>
+                    <form action="/changeData" method="post">
+                        <input type="hidden" name="name" value="<%= players.name %>">
+                        <button type="submit">Kustuta</button>
+                    </form> <button>Muuda</button>
                 </li>
             <% }); %>
-        </ul>
-    </form> <br><br>
+        </ul> <br><br>
     <button onclick="back();">Tagasi</button>
 </body>
 </html>

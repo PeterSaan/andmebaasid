@@ -2,6 +2,7 @@ import express, { urlencoded, json } from 'express';
 import { db } from './dbDrizzle.js';
 import { connection } from './dbDrizzle.js';
 import { players, guardians, teams } from "./db/schema.js";
+import { eq } from 'drizzle-orm';
 const app = express();
 const port = 3000;
 
@@ -25,7 +26,6 @@ app.post('/insertData', async (req, res) => {
   const { name } = req.body;
 
   await db.insert(players).values({ name: name });
-  function back() {window.location.href='http://localhost:3000'}
   res.send(`Tehtud <br><br> <button onclick=window.location.href='http://localhost:3000'>Tagasi</button>`);
 });
 
@@ -35,9 +35,11 @@ app.get('/viewData', async (req, res) => {
 });
 
 app.get('/changeData', async (req, res) => {
+  const { delName } = req.body;
   const result = await db.select().from(players);
-  //const delete = await db.delete(players).where(eq())
-  res.render('changeData', {players: result});
+
+  await db.delete(players).where(eq(players.name, delName));
+  res.render('changeData', { players: result});
 });
 
 app.listen(port, (err) => {
