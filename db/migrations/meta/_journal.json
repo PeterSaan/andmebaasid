@@ -22,6 +22,20 @@
       "when": 1698873787691,
       "tag": "0002_wild_green_goblin",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1700415438613,
+      "tag": "0003_nappy_miek",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1700415593226,
+      "tag": "0004_cloudy_ultimatum",
+      "breakpoints": true
     }
   ]
 }

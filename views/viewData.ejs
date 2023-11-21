@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaata andmeid</title>
 
-    <script>
-        function dontLook() {window.location.href='http://localhost:3000'};
-        function edit() {window.location.href='http://localhost:3000/changeData'};
-    </script>
+
 </head>
 <body>
     <form action="/viewData" method="get">
@@ -23,5 +20,10 @@
     </form>
     <button onclick="edit();">Muuda andmeid</button> <br><br><br>
     <button onclick="dontLook();">Peida andmed</button>
+
+    <script>
+        function dontLook() {window.location.href='http://localhost:3000'};
+        function edit() {window.location.href='http://localhost:3000/changeData'};
+    </script>
 </body>
 </html>
