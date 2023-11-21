@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andembaas</title>
-    <script>
-
-    </script>
+    <style>
+    </style>
 </head>
 <body>
     <h1>Insert</h1>
@@ -16,18 +15,12 @@
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br><br>
 
-        <input type="submit" value="Sisesta andmebaasi"><br>
+        <input type="submit" value="Sisesta andmebaasi"><br><br><br>
     </form>
-    <form action="/viewData" method="get">
-            <h2>List of players</h2>
-            <ul>
-                <% players.forEach(player => { %>
-                    <li>
-                        Name: <% player.name %>, Id: <% player.id %>
-                    </li>
-                <% }); %>
-            </ul>
-        <input type="button" value="Vaata sisestatud andmeid">
-    </form>
+    <button onclick="lookAtMe();">Vaata andmeid</button>
+    
+    <script>
+        function lookAtMe() {window.location.href='http://localhost:3000/viewData'};
+    </script>
 </body>
 </html>
