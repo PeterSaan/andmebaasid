@@ -23,9 +23,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/insertData', async (req, res) => {
-  const { name } = req.body;
+  const { insName } = req.body;
 
-  await db.insert(players).values({ name: name });
+  await db.insert(players).values({ name: insName });
   res.send(`Tehtud <br><br> <button onclick=window.location.href='http://localhost:3000'>Tagasi</button>`);
 });
 
@@ -34,15 +34,15 @@ app.get('/viewData', async (req, res) => {
   res.render('viewData', { players: result });
 });
 
-app.get('/changeData', async (req, res) => {
+app.delete('/deleteData', async (req, res) => {
   const { delName } = req.body;
   const result = await db.select().from(players);
 
   await db.delete(players).where(eq(players.name, delName));
-  res.render('changeData', { players: result});
+  res.render('deleteData', { players: result});
 });
 
 app.listen(port, (err) => {
-  if (err) console.log(err);
+  if (err) console.error(err);
   console.log(`Server running on http://localhost:${port}`);
 });

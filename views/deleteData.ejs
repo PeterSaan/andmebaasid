@@ -10,14 +10,14 @@
         <ul>
             <% players.forEach(el => { %>
                 <li>
-                    The name is <%= el.name %> and their id is <%= el.id %>. <br>
-                    <form action="/changeData" method="post">
+                    <b>Name:</b> <%= el.name %>, <b>id:</b> <%= el.id %>. <br>
+                    <form action="/deleteData" method="post">
                         <input type="hidden" name="name" value="<%= players.name %>">
                         <button type="submit">Kustuta</button>
-                    </form> <button>Muuda</button>
+                    </form> <button>Muuda</button> <br><br>
                 </li>
             <% }); %>
-        </ul> <br><br>
+        </ul> <br><br> 
     <button onclick="back();">Tagasi</button>
 
     <script>
